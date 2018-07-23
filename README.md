@@ -1,4 +1,4 @@
-# Wamenak [![bitHound Score][bithound-img]][bithound-url]
+# Wamenak Driver [![bitHound Score][bithound-img]][bithound-url]
 
 Wamenak Order Application
 
@@ -6,7 +6,7 @@ Wamenak Order Application
 
 #### PhoneGap CLI
 
-Wamenak Order Application - using the [phonegap-cli][phonegap-cli-url].
+Wamenak Driver Order Application - using the [phonegap-cli][phonegap-cli-url].
 
     phonegap create my-app
 
