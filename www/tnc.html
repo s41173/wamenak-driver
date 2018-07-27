@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 user-scalable=no">
+    
+    <!--Add to homescreen And color theme-->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Wamenak">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <!-- Theme color for chrome, firefox and opera-->
+    <meta name="theme-color" content="#27a542">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#27a542">
+
+    <title>Wamenak-Driver</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    
+
+</head>
+<body>
+     <!-- <div class="overlay"></div>
+         <nav id="sidebar">
+            <div id="main-nav">
+                <div id="dismiss">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+
+                
+                    <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
+                        <li><h3>Hello, <span>Harvine</span></h3></li>
+                        <li><img width="30px" src="img/Shopping-bag-black.png" alt=""> <span>0</span> <img width="30px" src="img/45271-200.png" alt=""> <span>0</span></li>
+                    </ul>
+                
+
+                
+                <ul class="nav navbar-nav navbar-left" style="background-color: gainsboro;">
+                    <li><a href="index.html">Catering</a></li>
+                    <li><a href="ready-to-eat.html">Ready To Eat</a></li>
+                    <li><a href="snack.html">Snack Box</a></li>
+                    <li><a href="wallet.html">E-Wallet</a></li>
+                    <li><a href="order.html">Cek Pesanan</a></li>
+                    <li><a href="notification.html">Notifications</a></li>
+                    <li><a href="cara-pesan.html">Cara Pesan</a></li>
+                    <li><a href="profil.html">Akun Saya</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                    <li><a href="contact.html">Hubungi Kami</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
+                    <li><p>Copyright &copy; 2018 Wamenak.</p></li>
+                </ul>
+          </div>
+        </nav> -->
+     
+    <header>
+
+    <div id="main-nav">
+
+        <nav class="navbar">
+            <div class="navbar-header">
+                <button onclick="goBack()" id="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="navbar-brand text-center">
+                    <img src="img/mylogo.png" alt="" class="img-responsive" width="85" style="margin:-12% 0 0 -15%;">
+                    <h4 style="color:#e8af00;font-weight: bold;margin-right:25px;">Driver</h4>
+                </div>
+            </div>
+
+        </div>
+        </nav>
+
+    </div>
+    </header>
+
+    <div class="container-fluid">
+        <h4 class="ff2">Terms & Conditions</h4>
+        <button class="accordion mtop">
+            <span class="ff2">1. Lorem ipsum loremm</span>
+        </button>
+        <div class="panel">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ab ratione laborum placeat nihil nulla enim, fugit assumenda veniam. Tempora mollitia, accusantium id iusto sunt adipisci tempore dolorem deserunt libero.
+            </p>
+        </div>
+
+        <button class="accordion">
+            <span class="ff2">2. Lorem ipsum loremm</span>
+        </button>
+        <div class="panel">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ab ratione laborum placeat nihil nulla enim, fugit assumenda veniam. Tempora mollitia, accusantium id iusto sunt adipisci tempore dolorem deserunt libero.
+            </p>
+        </div>
+
+        <button class="accordion">
+            <span class="ff2">3. Lorem ipsum loremm</span>
+        </button>
+        <div class="panel">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ab ratione laborum placeat nihil nulla enim, fugit assumenda veniam. Tempora mollitia, accusantium id iusto sunt adipisci tempore dolorem deserunt libero.
+            </p>
+        </div>
+
+        <button class="accordion">
+            <span class="ff2">4. Lorem ipsum loremm</span>
+        </button>
+        <div class="panel">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ab ratione laborum placeat nihil nulla enim, fugit assumenda veniam. Tempora mollitia, accusantium id iusto sunt adipisci tempore dolorem deserunt libero.
+            </p>
+        </div>
+
+        <button class="accordion">
+            <span class="ff2">5. Lorem ipsum loremm</span>
+        </button>
+        <div class="panel">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ab ratione laborum placeat nihil nulla enim, fugit assumenda veniam. Tempora mollitia, accusantium id iusto sunt adipisci tempore dolorem deserunt libero.
+            </p>
+        </div>
+
+    </div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() { 
+
+        if( !this.classList.contains('active2') ){
+            closeAll();
+        }
+        
+    this.classList.toggle("active2");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+        } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+    }
+    }
+
+
+
+    function closeAll(){
+        for (i = 0; i < acc.length; i++) {
+            acc[i].classList.remove("active");
+            acc[i].nextElementSibling.style.maxHeight = null;
+        }
+    }
+</script>
+
+  
+</body>
+</html>

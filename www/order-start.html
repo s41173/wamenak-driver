@@ -87,56 +87,81 @@
   </div>
 </header>
 
+    <div class="col-xs-12" style="height:250px; padding:0 !important; overflow:hidden;">
+        <script type="text/javascript" src="https://maps-api-ssl.google.com/maps/api/js?key=AIzaSyAaCjY30PVJEpkf9mcZg8R6Rs5KepJQjOg&callback=mymap"></script>
+        <script type="text/javascript">
+        //<![CDATA[
+        
+        var map; // Global declaration of the map
+        var lat_longs_map = new Array();
+        var markers_map = new Array();
+        
+        var iw_map = new google.maps.InfoWindow();
+            
+        function initialize_map() {
+            
+            var myLatlng = new google.maps.LatLng(3.59195, 98.66563399999995);
+            var myOptions = {
+                zoom: 17,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+            
+            var myLatlng = new google.maps.LatLng(3.59195, 98.66563399999995);
+                
+            var markerOptions = {
+                map: map,
+                position: myLatlng		
+            };
+            marker_0 = createMarker_map(markerOptions);
+            
+            marker_0.set();
+            
+            google.maps.event.addListener(marker_0, "click", function(event) {
+                iw_map.setContent(this.get("content"));
+                iw_map.open(map, this);
+        
+        });
+        
+        
+        }
 
-<div class="container-fluid">
-    <h4 style="font-weight: bold;">Detail Order</h4>
+        function createMarker_map(markerOptions) {
+            var marker = new google.maps.Marker(markerOptions);
+            markers_map.push(marker);
+            lat_longs_map.push(marker.getPosition());
+            return marker;
+        }
 
-    <br>
-    <img src="img/profil.png" width="70" alt="" class="cust-img img-rounded2">
-    <p class="ff2 text-center">Jennifer L</p>
+        google.maps.event.addDomListener(window, "load", initialize_map);
+        
+        //]]>
+        </script>
 
-    <div class="menu-list">
-        <span class="ff2">Menu Pesanan :</span>
+        <div id="map_canvas" style="width:100%; height:100%; margin-top:3%;"></div> 
+    </div> 
+
+    <div class="container-fluid">
+        <span class="ff2">Alamat Pengantaran :</span>
+
+        <br>
         <br>
 
-        <table class="table">
-            <tr>
-                <td>Cah Kangkung</td>
-                <td>x 1</td>
-            </tr>
+        <span class="ff2">
+            Jalan MH Thamrin No.124, Kelurahan Sei Rengas II, Kecamatan Medan Area, Kota Medan, Sumatera Utara 20212 
+        </span>
+        <br>
+        
+        <a href="">
+            <img src="img/gmaps.png" width="30" alt="">
+        </a>
 
-            <tr>
-                <td>Terong Sambal</td>
-                <td>x 1</td>
-            </tr>
+        <br>
+        <br>
 
-            <tr>
-                <td>Udang Goreng</td>
-                <td>x 2</td>
-            </tr>
-
-            <tr>
-                <td>Teh Tarik</td>
-                <td>x 2</td>
-            </tr>
-        </table>
+        <button class="btn btnorder" onclick="window.location.href='order-finish.html'">SELESAI</button>
     </div>
-
-    <br>
-
-    <span class="ff2">Alamat Pengantaran :</span>
-
-    <br>
-    <br>
-
-    <span class="ff2">
-            Jalan MH Thamrin No.124, Kelurahan Sei Rengas II, Kecamatan Medan Area, Kota Medan, Sumatera Utara 20212
-    </span>
-
-    <br>
-
-    <button class="btn btnorder" onclick="window.location.href='order-start.html'">MULAI</button>
-</div>
   
 </body>
 </html>

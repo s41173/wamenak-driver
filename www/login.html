@@ -47,7 +47,7 @@
         var nilai = '{ "username":"'+user+'", "device":"'+localStorage.device+'" }';
 		$.ajax({
 			type: 'POST',
-			url: api+'customer/login',
+			url: api+'courier/login',
 			data:  nilai,
             contentType: "application/json",
             dataType: 'json',
@@ -100,11 +100,11 @@
              
     $('#resendlink').click(function() {
         
-        var nilai = '{ "customer":"'+$("#huserid").val()+'" }';
+        var nilai = '{ "driver":"'+$("#huserid").val()+'" }';
         
 		$.ajax({
 			type: 'POST',
-			url: api+'api/resend_otp',
+			url: api+'api/resend_otp_driver',
 			data:  nilai,
             contentType: "application/json",
             dataType: 'json',
@@ -227,7 +227,7 @@
     <div class="loader"></div>
     <!-- loader class -->  
         
-         <h3 class="text-center">Login</h3>
+         <h3 class="text-center"> Courier Login </h3>
          <form action="" id="material" class="ajaxform" style="margin: 0 0 10px 0; ">
            
             <div id="guser" class="group">
@@ -244,8 +244,10 @@
             <input type="hidden" id="husername">
             <input type="hidden" id="huserid">
             
+            <center>
             <button type="button" id="btnotp" class="btn" value="otp"> GET OTP </button>
             <button type="button" id="btnlogin" class="btn" value="otp"> Login </button>
+            </center>
         </form>
         
         <script>
@@ -289,7 +291,6 @@
         <span id="resend"> </span>
         <a id="resendlink" style="display:none;">Resend</a>
          </center> 
-        <p>Belum punya akun? <a href="signup.html" style="color:#8597bf;">Daftar Sekarang</a></p>
         <hr>
         
 <!--

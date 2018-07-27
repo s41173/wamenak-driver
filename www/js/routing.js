@@ -79,17 +79,6 @@ var timePeriodToExit=2000;
             toast("Press again to exit");
             lastTimeBackPress=new Date().getTime();
         }
-
-      //  navigator.notification.confirm('Press back again to exit'
-      //               , function(button) {
-      //                   if (button == 2 || button == 0) {
-      //                       navigator.app.exitApp();
-      //                   }
-      //                 }
-      //               , 'Exit App?'
-      //               , ['No way', 'Exit']
-      //           );
-
         return false;
        
 //       navigator.app.exitApp();
@@ -108,24 +97,3 @@ var timePeriodToExit=2000;
   // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
   // window.plugins.OneSignal.syncHashedEmail(userEmail);
 }, false);
-
-
-
-   function series(cid,catname){
-
-      localStorage.setItem("category", cid);
-      localStorage.setItem("catname", catname);
-      window.location.href = "series.html"; 
-   }
-
-   function product(mid,modelname){
-     
-      localStorage.setItem("model", mid);
-      localStorage.setItem("modelname", modelname);
-      window.location.href = "product.html"; 
-   }
-
-   function calculator(pid){
-    localStorage.setItem("pid", pid);
-    window.location.href = "calculator.html"; 
- }

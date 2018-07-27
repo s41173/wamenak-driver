@@ -15,18 +15,20 @@
     <!-- Windows Phone -->
     <meta name="msapplication-navbutton-color" content="#000">
 
-    <title>Wamenak</title>
+    <title>Wamenak-Driver</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/w3style.css">
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/myJS.js"></script>
+    
+    <style type="text/css">
+        .batas{ width: 100%; height: 10px;}
+        .clear{ clear: both;}
+    </style>
     
     <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
     <link rel="stylesheet" href="css/toast.css">
@@ -34,146 +36,103 @@
     
     <script src="js/acl.js"></script>
     <script src="js/routing.js"></script>
-    <script src="js/home.js"></script>
-    <script src="js/pulltorefresh.js"></script>
     
-    <script src="js/jquery.nicescroll.min.js"></script>
     <script type="text/javascript">
-        
-         $(document).ready(function () {
-             $("#sidebar").niceScroll({
-                 cursorcolor: '#000',
-                 cursorwidth: 4,
-                 cursorborder: 'none'
-             });
-
-             $('#dismiss, .overlay').on('click', function () {
-                $('#sidebar').removeClass('active');
-                $('.overlay').fadeOut();
-             });
-
-             $('#sidebarCollapse').on('click', function () {
-                 $('#sidebar').addClass('active');
-                 $('.overlay').fadeIn();
-                 $('.collapse.in').toggleClass('in');
-                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-             });
-         });
-     </script>
+    
+    </script>
 
 </head>
-<body id="index" onload="home();">
-    
-    <!-- loader class -->
+<body id="index" onload="otentikasi('index');">
+     
+     <!-- loader class -->
     <div class="loader"></div>
     <!-- loader class -->  
     
      <!-- snackbar -->
      <div id="snackbar"></div>
-    
-     <div class="overlay"></div>
-         <nav id="sidebar">
-            
-            <div id="snackbarpop"></div>
-            <div id="main-nav">
-                <div id="dismiss">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
-
-                <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                    <li><h3>Hello, <span id="usernamex"></span> </h3></li>
-<!--                    <li> <img width="30px" src="img/45271-200.png" alt=""> <span>0</span> </li>-->
-                </ul>
-                
-                <ul id="sidemenu" class="nav navbar-nav navbar-left" style="background-color: gainsboro;">
-                </ul>
-                <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                    <li><p>Copyright &copy; 2018 Wamenak.</p></li>
-                </ul>
-           </div>
-        </nav>
      
-      <header>
+<header>
 
-          <div id="main-nav">
-          
-			<nav class="navbar">
-               <div class="container" id="catering">
-                    <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="collapse"  id="sidebarCollapse">
-                        <span class="sr-only">Toggle</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-brand text-center" style="padding-right: 0 !important;">
-                        <img src="img/mylogo.png" alt="" class="img-responsive" width="85" style="margin-top:-4px;">
-                    </div>
-<button type="button" class="navbar-toggle" id="bag" onclick="otentikasi('wallet')" style="margin-bottom:0 !important;">
-                        <img width="60px" src="img/wallet.png" alt="" style="margin-top:-5px;">
-                    </button>
-                    <button type="button" class="navbar-toggle" id="bag" onclick="otentikasi('cart');">
-                        <img width="30px" src="img/Shopping-bag-inv.png" alt="" style="margin-top:5px;">
-                    </button>
-                </div>
-            </nav>
+  <div id="main-nav">
 
-		</div>
-      </header>
-       
+    <nav class="navbar">
+      <div class="container" id="catering">
+        <div class="navbar-brand text-center" style="padding-right: 0 !important;">
+          <img src="img/mylogo.png" alt="" class="img-responsive" width="85" style="margin-top:-4px;">
+          <h4 style="color:#e8af00;font-weight: bold;">Driver</h4>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+
+<div class="container-fluid">
+  
+  <div class="col-xs-12 mtop3" style="padding: 0;">
     
-<div class="container-fluid" id="content">
+     <div class="col-xs-4 iconbox">
+      <button class="app" onclick="window.location.href='profil.html'">
+        <img src="img/Profile-icon-9.png" width="50" alt="">
+      </button>
+      <span class="lbl">Profil</span>
+    </div>
 
-<div class="text-center date">
-    <span id="day"></span>
-    <span id="date"></span>
-    <span id="month"></span>
-    <span id="year"></span>
-</div>
- 
-<!--
-    <table>
-        <tr> <td> <button onclick="window.plugins.insomnia.keepAwake()">keep awake</button>
-                  <button onclick="window.plugins.insomnia.allowSleepAgain()">allow sleep again</button>
-         </td> </tr>
-    </table>
--->
+    <div class="col-xs-4" onclick="window.location.href='tnc.html'">
+      <button class="app">
+        <img src="img/tnc.png" width="50" alt="">
+      </button>
+      <span class="lbl">Syarat & Ketentuan</span>
+    </div>
 
-<!--        Slide-->
-       <div class="row">
-           <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" id="sliderbox"> </div>
-           </div>
-       </div>
-       
-<!-- / recommended  -->
-<div id="recommendbox">
-</div>
-<!--  / recommended -->
-       
-<!-- / Category  -->
-<div id="catbox">
-
-</div>
-<!--  / category -->
+    <div class="col-xs-4" onclick="window.location.href='order-history.html'">
+      <button class="app">
+        <img src="img/mh.png" width="50" alt="">
+      </button>
+      <span class="lbl">Riwayat Pesanan</span>
+    </div>
+    
+    <div class="clear"></div>
+    <div class="batas"></div>
+    
+     <div class="col-xs-4">
+        <button class="app" onclick="window.location.href='ewallet.html'">
+          <img src="img/ewallet-500x500.png" width="50" alt="">
+        </button>
+        <span class="lbl">E-Wallet</span>
+      </div>
+  
+      <div class="col-xs-4">
+          <button class="app" onclick="window.location.href='topup.html'">
+            <img src="img/topup.png" width="50" alt="">
+          </button>
+          <span class="lbl">Top-up</span>
+        </div>
+  
+        <div class="col-xs-4">
+          <button class="app" onclick="window.location.href='ewallet-history.html'">
+            <img src="img/ewh.png" width="50" alt="">
+          </button>
+          <span class="lbl">Riwayat Top-up</span>
+        </div>
+    
+        <div class="col-xs-4 col-xs-offset-4">
+          <button class="app" onclick="window.location.href='ongoing.html'">
+            <img src="img/delivery.png" width="50" alt="">
+          </button>
+          <span class="lbl">On-going Order</span>
+        </div>
         
-</div>         
-      
+  </div>
+
+</div>
+  
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize(); // method penting untuk initilize
-    
-    PullToRefresh.init({
-        mainElement: 'body',
-        onRefresh: function() { location.reload(); }
-    });
-    
 </script>
-    
-    
-    
+  
 </body>
 </html>

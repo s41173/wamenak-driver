@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.wamenakdriver" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Wamenak</name>
+    <name>Wamenak Driver</name>
     <description>
-        Warung Makan Enak
+	Wamenak Driver
     </description>
     <author email="info@wamenak.com" href="http://wamenak.com">
        Wamenak
