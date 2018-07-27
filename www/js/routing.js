@@ -24,7 +24,7 @@ document.addEventListener('deviceready', function () {
             dataType: 'json',
             success: function(data)
             {   
-              if (data.status == true){ toast("Location updated");}else{ toast(data.error); }
+              if (data.status == true){ /*toast("Location updated");*/ }else{ toast(data.error); }
             },
             error: function (request, status, error) {
               toast('Send Location Error'+error);
@@ -44,7 +44,7 @@ document.addEventListener('deviceready', function () {
 
   // Options: throw an error if no update is received every 30 seconds.
   //
-  var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+  var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
   // location
 
   // onesignal
