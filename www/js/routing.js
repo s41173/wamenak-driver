@@ -45,7 +45,7 @@ document.addEventListener('deviceready', function () {
   // Options: throw an error if no update is received every 30 seconds.
   //
   navigator.geolocation.getCurrentPosition(onSuccess, onError, { maximumAge: 3000, timeout: 30000, enableHighAccuracy: true });
-  // var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+  var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
   // location
 
   // onesignal
