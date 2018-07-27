@@ -42,16 +42,18 @@ function idr_format(val){
    return val;
 }
 
-//cek_order();
-//var watchID = setInterval(function(){ cek_order(); }, 10000);
+cek_order();
+var orderID = setInterval(function(){ cek_order(); }, 10000);
 function cek_order(){
-    $.get(api+"sales/cek_ongoing", function(data, status){
-        if (data.status == true){
-            var uid = data.content[0].id;
-            localStorage.setItem("sid", uid);
-            window.location = "book.html";
-        }
-    });
+    if (localStorage.userid != undefined && localStorage.log != undefined){
+        $.get(api+"sales/cek_ongoing", function(data, status){
+            if (data.status == true){
+                var uid = data.content[0].id;
+                localStorage.setItem("sid", uid);
+                window.location = "book.html";
+            }
+        });
+    }
 }
 
 function otentikasi(page){
@@ -64,7 +66,7 @@ function otentikasi(page){
 
         $.ajax({
             type: 'POST',
-            url: api+'customer/otentikasi',
+            url: api+'courier/otentikasi',
             data : nilai,
             contentType: "application/json",
             dataType: 'json',
@@ -81,7 +83,7 @@ function otentikasi(page){
                     toast(mess);
                     setTimeout(function(){ window.location = "login.html"; }, 3000);
 
-                }else{ window.location = page+".html"; }
+                }
             },
             error: function (request, status, error) {
                 toast('Request Failed Otentikasi Request...! - '+request.responseText);
@@ -97,24 +99,18 @@ function otentikasi(page){
 
 function logout(){
 
-    localStorage.removeItem("username");
-    localStorage.removeItem("userid");
-    localStorage.removeItem("log");
-    window.location = "login.html";
-
-    // navigator.notification.confirm('Are you sure want to logout ?'
-    //         , function(button) {
-    //             if (button == 2 || button == 0) {
-    //                 localStorage.removeItem("username");
-    //                 localStorage.removeItem("userid");
-    //                 localStorage.removeItem("log");
-    //                 window.location = "login.html";
-    //             }
-    //         }
-    //         , 'Logout ?'
-    //         , ['No way', 'Logout']
-    // );
-
+    navigator.notification.confirm('Are you sure want to logout ?'
+            , function(button) {
+                if (button == 2 || button == 0) {
+                    localStorage.removeItem("username");
+                    localStorage.removeItem("userid");
+                    localStorage.removeItem("log");
+                    window.location = "login.html";
+                }
+            }
+            , 'Logout ?'
+            , ['No way', 'Logout']
+    );
 }
 
 // ----------------------------- acl --------------------------------------------------------

@@ -11,24 +11,28 @@ document.addEventListener('deviceready', function () {
       // element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
       //                     'Longitude: ' + position.coords.longitude     + '<br />' +
       //                     '<hr />'      + element.innerHTML;
-      var coor = position.coords.latitude+','+position.coords.longitude;
-      var nilai = '{ "coordinate":"'+coor+'" }';
+      if (localStorage.userid != undefined){
 
-      $.ajax({
-          type: 'POST',
-          url: api+'courier/post_loc',
-          data : nilai,
-          contentType: "application/json",
-          dataType: 'json',
-          success: function(data)
-          {   
-            if (data.status == true){ toast("Location updated");}else{ toast(data.error); }
-          },
-          error: function (request, status, error) {
-              console.log('Request Failed...!'+error);
-          }
-      })
-      return false;
+        var coor = position.coords.latitude+','+position.coords.longitude;
+        var nilai = '{ "userid":"'+localStorage.userid+'", "coordinate":"'+coor+'" }';
+  
+        $.ajax({
+            type: 'POST',
+            url: api+'courier/post_loc',
+            data : nilai,
+            contentType: "application/json",
+            dataType: 'json',
+            success: function(data)
+            {   
+              if (data.status == true){ toast("Location updated");}else{ toast(data.error); }
+            },
+            error: function (request, status, error) {
+              toast('Send Location Error'+error);
+            }
+        })
+        return false;
+
+      }
   }
 
   // onError Callback receives a PositionError object
@@ -40,7 +44,7 @@ document.addEventListener('deviceready', function () {
 
   // Options: throw an error if no update is received every 30 seconds.
   //
-  // var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
+  var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
   // location
 
   // onesignal
@@ -65,9 +69,7 @@ var timePeriodToExit=2000;
 
   document.addEventListener("backbutton", function(e){
     
-      var bodyId = document.body.id;
-//      alert(bodyId);
-      
+   var bodyId = document.body.id;   
    if(bodyId == 'index'){
      
        e.preventDefault();
@@ -80,17 +82,12 @@ var timePeriodToExit=2000;
             lastTimeBackPress=new Date().getTime();
         }
         return false;
-       
-//       navigator.app.exitApp();
    }
-//   else if (bodyId == 'product'){ window.location.href = "series.html";  }
    else if (bodyId == 'register'){ window.location.href = "index.html";  }
-  //  else if (bodyId == 'notif'){ window.location.href = "index.html";  }
    else {
        navigator.app.backHistory()
    }
       
-//     alert("Hello Aq kembali");
   }, false);
   
   // Call syncHashedEmail anywhere in your app if you have the user's email.
