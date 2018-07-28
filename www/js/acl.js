@@ -42,20 +42,6 @@ function idr_format(val){
    return val;
 }
 
-cek_order();
-var orderID = setInterval(function(){ cek_order(); }, 10000);
-function cek_order(){
-    if (localStorage.userid != undefined && localStorage.log != undefined){
-        $.get(api+"sales/cek_ongoing", function(data, status){
-            if (data.status == true){
-                var uid = data.content[0].id;
-                localStorage.setItem("sid", uid);
-                window.location = "book.html";
-            }
-        });
-    }
-}
-
 function otentikasi(page){
     
     $(document).ready(function(e){  
@@ -73,6 +59,7 @@ function otentikasi(page){
             success: function(data)
             {   
                 if (page == 'cart'){ mess = "Please login to view your order"; }
+                else if (page == 'book'){ mess = "Please login to view your book page"; }
                 else if (page == 'wallet'){ mess = "Please login to view your wallet"; }
                 else if (page == 'notif'){ mess = "Please login to view your notification"; }
                 else if (page == 'order'){ mess = "Please login to view the order history page"; }
@@ -82,7 +69,6 @@ function otentikasi(page){
                 if (data.status == false){ 
                     toast(mess);
                     setTimeout(function(){ window.location = "login.html"; }, 3000);
-
                 }
             },
             error: function (request, status, error) {
@@ -99,18 +85,23 @@ function otentikasi(page){
 
 function logout(){
 
-    navigator.notification.confirm('Are you sure want to logout ?'
-            , function(button) {
-                if (button == 2 || button == 0) {
-                    localStorage.removeItem("username");
+    localStorage.removeItem("username");
                     localStorage.removeItem("userid");
                     localStorage.removeItem("log");
                     window.location = "login.html";
-                }
-            }
-            , 'Logout ?'
-            , ['No way', 'Logout']
-    );
+
+    // navigator.notification.confirm('Are you sure want to logout ?'
+    //         , function(button) {
+    //             if (button == 2 || button == 0) {
+    //                 localStorage.removeItem("username");
+    //                 localStorage.removeItem("userid");
+    //                 localStorage.removeItem("log");
+    //                 window.location = "login.html";
+    //             }
+    //         }
+    //         , 'Logout ?'
+    //         , ['No way', 'Logout']
+    // );
 }
 
 // ----------------------------- acl --------------------------------------------------------

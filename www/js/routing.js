@@ -1,6 +1,10 @@
 document.addEventListener('deviceready', function () {
 
 
+  // vibration
+  navigator.vibrate(3000);
+
+
   // location
 // onSuccess Callback
     //   This method accepts a `Position` object, which contains
@@ -44,7 +48,6 @@ document.addEventListener('deviceready', function () {
 
   // Options: throw an error if no update is received every 30 seconds.
   //
-  navigator.geolocation.getCurrentPosition(onSuccess, onError, { maximumAge: 3000, timeout: 30000, enableHighAccuracy: true });
   var watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000 });
   // location
 
