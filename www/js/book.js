@@ -1,12 +1,10 @@
-document.addEventListener('deviceready', function () {
 
-    // calll function vibrate
-    function vibrator(){
-    //   navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
-     alert('Aku fungsi vibrator');
-    }
-}, false);  
+document.addEventListener("deviceready", vibrator, false);
 
+function vibrator(){
+  navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
+    // alert('Aku fungsi vibrator');
+}
 
 cek_order_active();
 var vibrate = setInterval(function(){ vibrator(); }, 3000);
