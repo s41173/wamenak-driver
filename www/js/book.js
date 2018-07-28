@@ -2,12 +2,12 @@
 document.addEventListener("deviceready", vibrator, false);
 
 function vibrator(){
-  navigator.vibrate([1000, 1000, 3000, 1000, 5000, 1000, 3000]);
+  navigator.vibrate([1000, 1000, 2000, 1000, 2000, 1000, 2000, 1000, 2000]);
 }
 
 vibrator();
 cek_order_active();
-var vibrate = setInterval(function(){ vibrator(); }, 30000);
+var vibrate = setInterval(function(){ vibrator(); }, 20000);
 var orderID = setInterval(function(){ cek_order_active(); }, 10000);
 function cek_order_active(){
     if (localStorage.userid != undefined && localStorage.log != undefined){
