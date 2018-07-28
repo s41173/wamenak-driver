@@ -1,10 +1,5 @@
 document.addEventListener('deviceready', function () {
 
-
-  // vibration
-  navigator.vibrate(3000);
-
-
   // location
 // onSuccess Callback
     //   This method accepts a `Position` object, which contains
