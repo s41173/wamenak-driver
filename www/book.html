@@ -60,10 +60,10 @@
   
 
 <div class="container-fluid">
-    <button class="ff2 bookbtn">BOOK</button>
+    <button class="ff2 bookbtn" onclick="book();">BOOK</button>
 
     <span class="midd">
-        Nomor Order : <b>9809876</b>
+        Nomor Order : <b id="ordercode"></b>
         <br><br>
     </span>
 
@@ -74,16 +74,14 @@
     </div>
 
     <div class="col-xs-9" style="padding: 0">
-        <span style="font-size: 12px;">
-            Jalan MH Thamrin No.124, Kelurahan Sei Rengas II, 
-            Kecamatan Medan Area, Kota Medan, Sumatera 
-            Utara 20212
+        <span style="font-size: 12px;" id="orderaddress">
+            
         </span>
     </div>
     
     <div class="col-xs-12 mtop" style="padding: 0;">
         <span class="mtop2" style="display: block;">Metode Pembayaran :</span>
-        <span class="ff2" style="font-size: 25px;">CASH</span>
+        <span id="orderpayment" class="ff2" style="font-size: 25px;"></span>
     </div>
 
 </div>
