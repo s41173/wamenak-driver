@@ -7,20 +7,7 @@ function vibrator(){
 
 get_ongoing_order();
 vibrator();
-cek_order_active();
 var vibrate = setInterval(function(){ vibrator(); }, 20000);
-var orderID = setInterval(function(){ cek_order_active(); }, 10000);
-function cek_order_active(){
-    if (localStorage.userid != undefined && localStorage.log != undefined){
-        $.get(api+"sales/sales/cek_booked_status/"+localStorage.sid, function(data, status){
-            if (data.status == false){
-                localStorage.removeItem("sid");
-                toast(data.error);
-                setTimeout(function(){ window.location = "index.html"; }, 3000);
-            }
-        });
-    }
-}
 
 function get_ongoing_order(){
     if (localStorage.userid != undefined && localStorage.log != undefined){
@@ -35,9 +22,9 @@ function get_ongoing_order(){
 
 function book(){
     if (localStorage.userid != undefined && localStorage.log != undefined){
-        $.get(api+"sales/book_order/"+localStorage.sid, function(data, status){
+        $.get(api+"sales/book_order/"+localStorage.sid+"/"+localStorage.userid, function(data, status){
            if (data.status == true){
-            localStorage.removeItem("sid");
+            // localStorage.removeItem("sid");
             toast(data.error);
             setTimeout(function(){ window.location = "ongoing.html"; }, 2000);
            }

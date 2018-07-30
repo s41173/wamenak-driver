@@ -82,7 +82,7 @@ var timePeriodToExit=2000;
         }
         return false;
    }
-   else if (bodyId == 'register'){ window.location.href = "index.html";  }
+   else if (bodyId == 'ongoing'){ window.location.href = "index.html";  }
    else {
        navigator.app.backHistory()
    }

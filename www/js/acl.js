@@ -86,17 +86,19 @@ function otentikasi(page){
 function logout(){
 
     localStorage.removeItem("username");
-                    localStorage.removeItem("userid");
-                    localStorage.removeItem("log");
-                    window.location = "login.html";
+    localStorage.removeItem("userid");
+    localStorage.removeItem("log");
+    localStorage.removeItem("sid");
+    window.location = "login.html";
 
     // navigator.notification.confirm('Are you sure want to logout ?'
     //         , function(button) {
     //             if (button == 2 || button == 0) {
-    //                 localStorage.removeItem("username");
-    //                 localStorage.removeItem("userid");
-    //                 localStorage.removeItem("log");
-    //                 window.location = "login.html";
+        // localStorage.removeItem("username");
+        // localStorage.removeItem("userid");
+        // localStorage.removeItem("log");
+        // localStorage.removeItem("sid");
+        // window.location = "login.html";
     //             }
     //         }
     //         , 'Logout ?'
