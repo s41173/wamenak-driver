@@ -1285,10 +1285,6 @@ a.terms{
     transition: max-height 0.2s ease-out;
 }
 
-
-
-
-
 /* DRIVER APP */
 button.app {
     display: block;
@@ -1419,4 +1415,27 @@ span.midd{
     background-color: #e7af00;
     color: white;
     padding: 5px 8px;
+}
+
+.loader {
+/*
+  border: 16px solid #000;
+  border-radius: 50%;
+  border-top: 16px solid #EAB700;
+*/
+  width: 75px;
+  height: 75px;
+/*
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+*/
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 30%;
+  left: 38%;
+  background-image: url(../images/zoomloader.gif);
+    
 }

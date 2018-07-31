@@ -23,6 +23,9 @@ con = con+"<tr> <td>"+capitalizeFirstLetter(trans[i].product)+"</td> <td>x "+tra
                 if (bodyId == 'orderstart'){
                     var cor = shipping.coordinate.split(',');
                     initialize_map(parseFloat(cor[0]),parseFloat(cor[1]));
+                    // $("#bnavigate").href = "geo:"+cor[0]+","+cor[1];
+                    a = document.getElementById("bnavigate");
+                    a.setAttribute("href", "geo:"+cor[0]+","+cor[1]);
                 }
         });
     }
