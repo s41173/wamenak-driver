@@ -32,6 +32,8 @@
     <script src="js/acl.js"></script>
     <script src="js/routing.js"></script>
     <script src="js/ongoing.js"></script>
+    <script src="js/cekorder.js"></script>
+    
     <script>
         function goBack() {
             window.location = "index.html";
@@ -40,7 +42,7 @@
     
 
 </head>
-<body id="ongoing" style="background-color: #efefef;">
+<body id="ongoing" style="background-color:#efefef;" onload="otentikasi('ongoing');">
      
     <!-- loader class -->
     <div class="loader"></div>
@@ -74,8 +76,8 @@
     <a href="order.html" style="text-decoration: none;">
         <div class="rw">
             <div class="container-fluid">
-                <span class="ff2" style="padding-right: 25px;">9809876</span>
-                <span class="date">12 Juli 2018, 15.00</span>
+                <span class="ff2" style="padding-right: 25px;" id="ordercode"></span>
+                <span class="date" id="orderdate"></span>
                 <hr style="margin: 0;padding: 3px 0;">
     
                 <div class="col-xs-3" style="padding: 0">
@@ -83,18 +85,13 @@
                 </div>
     
                 <div class="col-xs-9" style="padding: 0">
-                    <h5 style="font-weight: bold;">Jennifer L</h5>
-    
-                    <span style="font-size: 10px;">
-                        Jalan MH Thamrin No.124, Kelurahan Sei Rengas II, 
-                        Kecamatan Medan Area, Kota Medan, Sumatera 
-                        Utara 20212
-                    </span>
+                    <h5 style="font-weight: bold;" id="ordercustomer"></h5>
+                    <span style="font-size: 10px;" id="orderaddress"> </span>
                 </div>
                  <div class="col-xs-12 mtop" style="padding: 0;">
-                    <span>Total : <b>Rp 85.000,-</b></span>
+                    <span>Total : <b id="salestotal"> </b></span>
                     <br>
-                    <span class="ff2">CASH</span>
+                    <span class="ff2" id="salespayment"></span>
                 </div> 
             </div>
         </div>

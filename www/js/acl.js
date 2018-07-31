@@ -58,10 +58,8 @@ function otentikasi(page){
             dataType: 'json',
             success: function(data)
             {   
-                if (page == 'cart'){ mess = "Please login to view your order"; }
+                if (page == 'ongoing'){ mess = "Please login to view your order"; }
                 else if (page == 'book'){ mess = "Please login to view your book page"; }
-                else if (page == 'wallet'){ mess = "Please login to view your wallet"; }
-                else if (page == 'notif'){ mess = "Please login to view your notification"; }
                 else if (page == 'order'){ mess = "Please login to view the order history page"; }
                 else if (page == 'profil'){ mess = "Please login to view the profile page"; }
                 else if (page == 'index'){ mess = "Please login to use this application"; }

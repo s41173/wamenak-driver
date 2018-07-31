@@ -26,7 +26,7 @@ function book(){
            if (data.status == true){
             // localStorage.removeItem("sid");
             toast(data.error);
-            setTimeout(function(){ window.location = "ongoing.html"; }, 2000);
+            setTimeout(function(){ window.location = "order.html"; }, 2000);
            }
         });
     }

@@ -22,54 +22,35 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/order.js"></script>
+    <script src="js/cekorder.js"></script>
+    
     <script>
         function goBack() {
-            window.history.back();
+            window.location = "ongoing.html";
         }
     </script>
-    
 
 </head>
-<body>
-     <!-- <div class="overlay"></div>
-         <nav id="sidebar">
-            <div id="main-nav">
-                <div id="dismiss">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
+<body id="order" onload="otentikasi('order');">
+    
+ <!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
 
-                
-                    <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                        <li><h3>Hello, <span>Harvine</span></h3></li>
-                        <li><img width="30px" src="img/Shopping-bag-black.png" alt=""> <span>0</span> <img width="30px" src="img/45271-200.png" alt=""> <span>0</span></li>
-                    </ul>
-                
-
-                
-                <ul class="nav navbar-nav navbar-left" style="background-color: gainsboro;">
-                    <li><a href="index.html">Catering</a></li>
-                    <li><a href="ready-to-eat.html">Ready To Eat</a></li>
-                    <li><a href="snack.html">Snack Box</a></li>
-                    <li><a href="wallet.html">E-Wallet</a></li>
-                    <li><a href="order.html">Cek Pesanan</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="cara-pesan.html">Cara Pesan</a></li>
-                    <li><a href="profil.html">Akun Saya</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="contact.html">Hubungi Kami</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                    <li><p>Copyright &copy; 2018 Wamenak.</p></li>
-                </ul>
-          </div>
-        </nav> -->
+ <!-- snackbar -->
+ <div id="snackbar"></div>
      
 <header>
-
   <div id="main-nav">
 
     <nav class="navbar">
@@ -80,63 +61,39 @@
                 <h4 style="color:#e8af00;font-weight: bold;margin-right:25px;">Driver</h4>
             </div>
         </div>
-
-      </div>
     </nav>
-
   </div>
 </header>
 
 
 <div class="container-fluid">
-    <h4 style="font-weight: bold;">Detail Order</h4>
+    <h4 style="font-weight: bold;">Detail Order : <span id="ordercode"> </span> </h4>
 
     <br>
     <img src="img/profil.png" width="70" alt="" class="cust-img img-rounded2">
-    <p class="ff2 text-center">Jennifer L</p>
+    <p class="ff2 text-center" id="ordercustomer"> </p>
 
     <div class="menu-list">
         <span class="ff2">Menu Pesanan :</span>
         <br>
 
-        <table class="table">
-            <tr>
-                <td>Cah Kangkung</td>
-                <td>x 1</td>
-            </tr>
-
-            <tr>
-                <td>Terong Sambal</td>
-                <td>x 1</td>
-            </tr>
-
-            <tr>
-                <td>Udang Goreng</td>
-                <td>x 2</td>
-            </tr>
-
-            <tr>
-                <td>Teh Tarik</td>
-                <td>x 2</td>
-            </tr>
+        <table class="table" id="protable">
+            
         </table>
     </div>
 
     <br>
-
-    <span class="ff2">Alamat Pengantaran :</span>
-
-    <br>
-    <br>
-
-    <span class="ff2">
-            Jalan MH Thamrin No.124, Kelurahan Sei Rengas II, Kecamatan Medan Area, Kota Medan, Sumatera Utara 20212
-    </span>
-
-    <br>
-
+    <span class="ff2"> <b> Alamat Pengantaran : </b> </span> <br>
+    <span style="font-size:9pt;" id="orderaddress"> </span>
+    <br> <br>
     <button class="btn btnorder" onclick="window.location.href='order-start.html'">MULAI</button>
 </div>
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>  
   
 </body>
 </html>
