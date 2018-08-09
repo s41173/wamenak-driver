@@ -28,3 +28,39 @@ con = con+"<tr> <td>"+capitalizeFirstLetter(trans[i].product)+"</td> <td>x "+tra
     }
 }
 
+// ====================== map ========================================
+    
+function initialize_map(lat,long) {
+    
+    var myLatlng = new google.maps.LatLng(lat,long);
+    var myOptions = {
+        zoom: 17,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    
+    var myLatlng = new google.maps.LatLng(lat,long);
+        
+    var markerOptions = {
+        map: map,
+        position: myLatlng		
+    };
+    marker_0 = createMarker_map(markerOptions);
+    
+    marker_0.set();
+    
+    google.maps.event.addListener(marker_0, "click", function(event) {
+        iw_map.setContent(this.get("content"));
+        iw_map.open(map, this);
+
+});
+
+}
+
+function createMarker_map(markerOptions) {
+    var marker = new google.maps.Marker(markerOptions);
+    markers_map.push(marker);
+    lat_longs_map.push(marker.getPosition());
+    return marker;
+}

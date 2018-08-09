@@ -22,28 +22,31 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
     <script src="js/acl.js"></script>
     <script src="js/routing.js"></script>
-
+    <script src="js/profil.js"></script>
+    <script src="js/cekorder.js"></script>
+    
     <script>
-        function goBack() {
-            window.history.back();
-        }
+        function goBack() { window.location = "index.html"; }
     </script>
 
-    <style>
-    body {
-        font-family: 'Josefin sans', sans-serif;
-    }
-        #blogout{ width: 90%;}
-    </style>
-    
-
 </head>
-<body>
+<body id="profil" onload="otentikasi('profil');">
+    
+ <!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
+
+ <!-- snackbar -->
+ <div id="snackbar"></div>
      
 <header>
 
@@ -62,33 +65,38 @@
   </div>
 </header>
 
+<style type="text/css">
+    
+    #blogout{ width: 95%;}
+    
+</style>
 
 <div class="container-fluid mtop2">
-    <img src="img/profil.png" width="70" alt="" class="cust-img img-rounded2">
+    <img id="proimage" src="img/profil.png" width="70" alt="" class="cust-img img-rounded2">
     <table class="table total">
         <tr>
-            <td>Nama Driver</td>
-            <td><b>Anfriansyah</b></td>
+            <td>Nama</td>
+            <td><b id="name"></b></td>
         </tr>
 
         <tr>
-            <td>ID Driver</td>
-            <td><b>428428958948</b></td>
+            <td>IC Driver</td>
+            <td><b id="ic"></b></td>
         </tr>
     
         <tr>
             <td>No. HP</td>
-            <td><b>+62 831-4234-2455</b></td>
+            <td><b id="phone"></b></td>
         </tr>
 
         <tr>
             <td>Email</td>
-            <td><b>anfriansyah@gmail.com</b></td>
+            <td><b id="email"></b></td>
         </tr>
     
         <tr>
-            <td>Tempat, Tgl. Lahir</td>
-            <td><b>Medan, 15 Juli 1992</b></td>
+            <td> Alamat </td>
+            <td><b id="address"></b></td>
         </tr>
 
         <tr>

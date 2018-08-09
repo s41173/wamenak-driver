@@ -68,44 +68,9 @@
         var map; // Global declaration of the map
         var lat_longs_map = new Array();
         var markers_map = new Array();
-        
-        var iw_map = new google.maps.InfoWindow();
-            
-        function initialize_map(lat,long) {
-            
-            var myLatlng = new google.maps.LatLng(lat,long);
-            var myOptions = {
-                zoom: 17,
-                center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-                }
-            map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-            
-            var myLatlng = new google.maps.LatLng(lat,long);
-                
-            var markerOptions = {
-                map: map,
-                position: myLatlng		
-            };
-            marker_0 = createMarker_map(markerOptions);
-            
-            marker_0.set();
-            
-            google.maps.event.addListener(marker_0, "click", function(event) {
-                iw_map.setContent(this.get("content"));
-                iw_map.open(map, this);
-        
-        });
-        
-        }
 
-        function createMarker_map(markerOptions) {
-            var marker = new google.maps.Marker(markerOptions);
-            markers_map.push(marker);
-            lat_longs_map.push(marker.getPosition());
-            return marker;
-        }
-        
+        var iw_map = new google.maps.InfoWindow();
+
         //]]>
         </script>
 
@@ -122,24 +87,28 @@
         
         <style type="text/css">
         
-#bnavigate{ display: block; color: #65D449; background-color:#000; font-weight: bold;
-            font-size: 16pt; padding: 5px; text-align: center; font-family: 'Josefin sans', sans-serif;
+#bnavigate{ display: block; color: #e8af00; background-color:#000; font-weight: bold;
+            font-size: 17pt; padding: 5px; text-align: center; font-family: 'Josefin sans', sans-serif;
     text-decoration: none;
           }
             
         </style>
      
        
-        <div style="width:50%; float:left;">
+        <div style="width:52%; float:left;">
           <a id="bnavigate"> <img src="img/gmaps.png" width="39" alt=""> NAVIGASI </a>
         </div>
 
-        <div style="width:50%; float:left;">
-          <button class="btn btnorder" onclick="window.location.href='order-finish.html'">SELESAI</button>
-        </div>
-    
-        
+        <div style="width:48%; float:left;">
+          <button class="btn btnorder" onclick="window.location.href='order-finish.html'">DETAIL</button>
+        </div> 
     </div>
+  
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>
   
 </body>
 </html>

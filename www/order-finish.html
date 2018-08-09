@@ -11,9 +11,9 @@
     <meta name="apple-mobile-web-app-title" content="Wamenak">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <!-- Theme color for chrome, firefox and opera-->
-    <meta name="theme-color" content="#27a542">
+    <meta name="theme-color" content="#000">
     <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#27a542">
+    <meta name="msapplication-navbutton-color" content="#000">
 
     <title>Wamenak-Driver</title>
 
@@ -22,51 +22,33 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-    <script>
+    
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/order_finish.js"></script>
+    <script src="js/cekorder.js"></script>
+    
+    <script type="text/javascript">
         function goBack() {
-            window.history.back();
+            window.location = "order-start.html";
         }
     </script>
     
-
 </head>
 <body>
-     <!-- <div class="overlay"></div>
-         <nav id="sidebar">
-            <div id="main-nav">
-                <div id="dismiss">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
 
-                
-                    <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                        <li><h3>Hello, <span>Harvine</span></h3></li>
-                        <li><img width="30px" src="img/Shopping-bag-black.png" alt=""> <span>0</span> <img width="30px" src="img/45271-200.png" alt=""> <span>0</span></li>
-                    </ul>
-                
+     <!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
 
-                
-                <ul class="nav navbar-nav navbar-left" style="background-color: gainsboro;">
-                    <li><a href="index.html">Catering</a></li>
-                    <li><a href="ready-to-eat.html">Ready To Eat</a></li>
-                    <li><a href="snack.html">Snack Box</a></li>
-                    <li><a href="wallet.html">E-Wallet</a></li>
-                    <li><a href="order.html">Cek Pesanan</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="cara-pesan.html">Cara Pesan</a></li>
-                    <li><a href="profil.html">Akun Saya</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="contact.html">Hubungi Kami</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                    <li><p>Copyright &copy; 2018 Wamenak.</p></li>
-                </ul>
-          </div>
-        </nav> -->
+ <!-- snackbar -->
+ <div id="snackbar"></div>
      
 <header>
 
@@ -80,72 +62,55 @@
                 <h4 style="color:#e8af00;font-weight: bold;margin-right:25px;">Driver</h4>
             </div>
         </div>
-
-      </div>
     </nav>
-
   </div>
 </header>
 
 
 <div class="container-fluid">
-    <h4 style="font-weight: bold;">Detail Pembayaran</h4>
+    <h4 style="font-weight: bold;">Detail Pembayaran : <span id="ordercode"> </span> </h4>
+    <input type="hidden" id="horder">
 
     <div class="menu-list">
         <span class="ff2">Menu Pesanan :</span>
         <br>
 
-        <table class="table">
-            <tr>
-                <td>Cah Kangkung (1)</td>
-                <td>Rp 15.000,-</td>
-            </tr>
-
-            <tr>
-                <td>Terong Sambal (1)</td>
-                <td>Rp 12.000,-</td>
-            </tr>
-
-            <tr>
-                <td>Udang Goreng (2)</td>
-                <td>Rp 30.000,-</td>
-            </tr>
-
-            <tr>
-                <td>Teh Tarik (2)</td>
-                <td>Rp 18.000,-</td>
-            </tr>
+        <table class="table" id="protable">
+            
         </table>
 
         <table class="table total">
             <tr style="border-top:1px solid black !important;">
                 <td><span class="ff2">TOTAL</span></td>
-                <td><span class="ff2">Rp 75.000,-</span></td>
+                <td style="text-align:right;"><span class="ff2" id="total">0</span></td>
             </tr>
                 
             <tr>
                 <td><span class="ff2">Biaya Pengiriman</span></td>
-                <td><span class="ff2">Rp 15.000,-</span></td>
+                <td style="text-align:right;"><span class="ff2" id="shipping">0</span></td>
             </tr>
 
             <tr>
                 <td><span class="ff2">GRAND TOTAL :</span></td>
             </tr>
         </table>
-
-        <span class="gtotal">Rp 90.000,-</span>
+        
+        <span class="gtotal" id="gtotal">0,-</span>
     </div>
 
     <br>
 
     <span class="ff2">Metode Pembayaran :</span>
-    <br>
-    <h2 class="ff2">CASH</h2>
+    <h2 class="ff2" style="margin:10px;" id="salespayment"></h2>
 
-    <br>
-
-    <button class="btn btnorder" onclick="window.location.href='index.html'">OK</button>
+    <button class="btn btnorder" onclick="finishorder();"> FINISH </button>
 </div>
-  
+ 
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script>
+    
 </body>
 </html>

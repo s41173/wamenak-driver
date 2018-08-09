@@ -82,7 +82,8 @@ var timePeriodToExit=2000;
         }
         return false;
    }
-   else if (bodyId == 'ongoing' || bodyId == 'orderstart'){ window.location.href = "index.html"; }
+   else if (bodyId == 'ongoing'){ window.location.href = "index.html"; }
+   else if (bodyId == 'orderstart'){ window.location.href = "index.html"; }
    else {
        navigator.app.backHistory()
    }
