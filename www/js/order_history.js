@@ -1,5 +1,5 @@
 var start = 0;
-var limit = 3;
+var limit = 10;
 var reachedMax = false;
 
 get_order();
@@ -61,7 +61,7 @@ con = con+
                 } // end looping
                 start += limit;
                 $("#successbox").append(con);
-}else{ reachedMaxs = true; }
+}else{ reachedMax = true; }
 
             },
             error: function (request, status, error) {

@@ -22,52 +22,32 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-    <script>
-        function goBack() {
-            window.history.back();
-        }
-    </script>
     
+    <link rel="stylesheet" href="js/sweetalert/sweetalert.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <script src="js/sweetalert/sweetalert.min.js"></script>
+    
+    <script src="js/acl.js"></script>
+    <script src="js/routing.js"></script>
+    <script src="js/ewallet.js"></script>
+    <script src="js/cekorder.js"></script>
+    
+    <script type="text/javascript">
+        function goBack() { window.location = "index.html"; }
+    </script>
 
 </head>
-<body>
-     <!-- <div class="overlay"></div>
-         <nav id="sidebar">
-            <div id="main-nav">
-                <div id="dismiss">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                </div>
+<body id="wallet" onload="otentikasi('wallet');">
+ 
+<!-- loader class -->
+<div class="loader"></div>
+<!-- loader class -->  
 
-                
-                    <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                        <li><h3>Hello, <span>Harvine</span></h3></li>
-                        <li><img width="30px" src="img/Shopping-bag-black.png" alt=""> <span>0</span> <img width="30px" src="img/45271-200.png" alt=""> <span>0</span></li>
-                    </ul>
-                
-
-                
-                <ul class="nav navbar-nav navbar-left" style="background-color: gainsboro;">
-                    <li><a href="index.html">Catering</a></li>
-                    <li><a href="ready-to-eat.html">Ready To Eat</a></li>
-                    <li><a href="snack.html">Snack Box</a></li>
-                    <li><a href="wallet.html">E-Wallet</a></li>
-                    <li><a href="order.html">Cek Pesanan</a></li>
-                    <li><a href="notification.html">Notifications</a></li>
-                    <li><a href="cara-pesan.html">Cara Pesan</a></li>
-                    <li><a href="profil.html">Akun Saya</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                    <li><a href="contact.html">Hubungi Kami</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-left" style="background-color: whitesmoke;">
-                    <li><p>Copyright &copy; 2018 Wamenak.</p></li>
-                </ul>
-          </div>
-        </nav> -->
-     
+ <!-- snackbar -->
+ <div id="snackbar"></div>
+             
 <header>
 
   <div id="main-nav">
@@ -80,8 +60,6 @@
                 <h4 style="color:#e8af00;font-weight: bold;margin-right:25px;">Driver</h4>
             </div>
         </div>
-
-      </div>
     </nav>
 
   </div>
@@ -89,18 +67,18 @@
 
 
 <div class="container-fluid">
-    <h4 style="font-weight: bold;">Jumlah Saldo E-Wallet</h4>
-    <br>
+    <h4 style="font-weight: bold; text-align:center;">Jumlah Saldo E-Wallet</h4>
+    <h3 class="text-center balance" id="balance">0</h3>
 
-    <p style="font-size: 12px;">Jumlah saldo pada E-Wallet driver adalah total dari Top-up customer.</p>
-    <br>
-
-    <h3 class="text-center balance">Rp 500.000,-</h3>
-    <br>
-
-    <a href="ewallet-history.html" class="chk">Lihat History Top-Up</a>
-
+    <a onclick="direct('topup')" class="chk">Lihat History Top-Up </a>
+    <a onclick="direct('order')" class="chk">Lihat History Order </a>
 </div>
+  
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize(); // method penting untuk initilize
+</script> 
   
 </body>
 </html>

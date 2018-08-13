@@ -59,10 +59,12 @@ function otentikasi(page){
             success: function(data)
             {   
                 if (page == 'ongoing'){ mess = "Please login to view your order"; }
+                else if (page == 'wallet'){ mess = "Please login to view your balance"; }
                 else if (page == 'book'){ mess = "Please login to view your book page"; }
                 else if (page == 'order'){ mess = "Please login to view the order history page"; }
                 else if (page == 'profil'){ mess = "Please login to view the profile page"; }
                 else if (page == 'index'){ mess = "Please login to use this application"; }
+                else if (page == 'topup'){ mess = "Please login to use topup application"; }
                 
                 if (data.status == false){ 
                     toast(mess);
