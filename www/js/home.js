@@ -1,5 +1,5 @@
 
-setTimeout(function(){ sleep(1); }, 10000);
+// setTimeout(function(){ sleep(1); }, 10000);
 function sleep(val){
     if (val == 1){ 
       window.plugins.insomnia.keepAwake(); 

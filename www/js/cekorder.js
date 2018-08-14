@@ -5,10 +5,24 @@ var orderID = setInterval(function(){ cek_ongoing_order_active(); }, 10000);
 function cek_ongoing_order_active(){
     if (localStorage.sid != undefined){
         $.get(api+"sales/cek_booked_status/"+localStorage.sid, function(data, status){
-            localStorage.removeItem("sid");
-            cek_order();
+            if (data.status == true){
+                cek_ongoing_active();
+            }else{
+                cek_order();
+            }
         });
     }else{ cek_order(); }
+}
+
+function cek_ongoing_active(){
+
+    $.get(api+"sales/cek_id_json/"+localStorage.sid, function(data, status){
+        if (data.status == false){
+            localStorage.removeItem("sid");
+            console.log('hapus sid');
+        }
+    });
+
 }
 
 function cek_order(){
