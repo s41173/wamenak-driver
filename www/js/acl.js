@@ -42,6 +42,12 @@ function idr_format(val){
    return val;
 }
 
+function sleep(val){
+  if (val == '1'){ window.plugins.insomnia.keepAwake(); toast('Screen Light On'); }else{
+    window.plugins.insomnia.allowSleepAgain();
+  }
+}
+
 function otentikasi(page){
     
     $(document).ready(function(e){  
