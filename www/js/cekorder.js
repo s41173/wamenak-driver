@@ -8,6 +8,7 @@ function cek_ongoing_order_active(){
             if (data.status == true){
                 cek_ongoing_active();
             }else{
+                // localStorage.removeItem("sid");
                 cek_order();
             }
         });
