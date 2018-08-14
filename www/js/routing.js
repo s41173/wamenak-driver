@@ -63,6 +63,8 @@ document.addEventListener('deviceready', function () {
 
   // onesignal
    
+
+// fungsi untuk back button 2x
 var lastTimeBackPress=0;
 var timePeriodToExit=2000;
 
