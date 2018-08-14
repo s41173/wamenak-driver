@@ -39,7 +39,7 @@
     <script src="js/cekorder.js"></script>
     
     <script type="text/javascript">
-       sleep('1');
+       window.plugins.insomnia.allowSleepAgain();
     </script>
 
 </head>
@@ -70,6 +70,14 @@
 
 
 <div class="container-fluid">
+  
+    <br>
+    <table>
+        <tr> <td> <button onclick="sleep('1')">keep awake</button>
+                  <button onclick="sleep('0')">allow sleep again</button>
+         </td> </tr>
+    </table>
+
   
   <div class="col-xs-12 mtop3" style="padding: 0;">
     

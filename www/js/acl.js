@@ -43,8 +43,11 @@ function idr_format(val){
 }
 
 function sleep(val){
-  if (val == '1'){ window.plugins.insomnia.keepAwake(); toast('Screen Light On'); }else{
-    window.plugins.insomnia.allowSleepAgain();
+  if (val == '1'){ 
+    window.plugins.insomnia.keepAwake(); 
+    toast('Screen Light On'); }else{
+    window.plugins.insomnia.allowSleepAgain(); 
+    toast('Screen Light Off');
   }
 }
 
