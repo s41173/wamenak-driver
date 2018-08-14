@@ -23,7 +23,8 @@ con = con+"<tr> <td>"+capitalizeFirstLetter(trans[i].product)+"</td> <td>x "+tra
                 initialize_map(parseFloat(cor[0]),parseFloat(cor[1]));
                 // $("#bnavigate").href = "geo:"+cor[0]+","+cor[1];
                 a = document.getElementById("bnavigate");
-                a.setAttribute("href", "geo:"+cor[0]+","+cor[1]);
+                // a.setAttribute("href", "geo:"+cor[0]+","+cor[1]);
+                $("#hcoor").val(cor[0]+","+cor[1]);
         });
     }
 }
@@ -63,4 +64,9 @@ function createMarker_map(markerOptions) {
     markers_map.push(marker);
     lat_longs_map.push(marker.getPosition());
     return marker;
+}
+
+function navigate(){
+    var coor = $("#hcoor").val();
+    window.open("geo:"+coor);
 }
