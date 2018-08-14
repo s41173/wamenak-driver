@@ -24,7 +24,7 @@ con = con+"<tr> <td>"+capitalizeFirstLetter(trans[i].product)+"</td> <td>x "+tra
                 // $("#bnavigate").href = "geo:"+cor[0]+","+cor[1];
                 a = document.getElementById("bnavigate");
                 // a.setAttribute("href", "geo:"+cor[0]+","+cor[1]);
-                $("#hcoor").val(cor[0]+","+cor[1]);
+                $("#hcoor").val(cor[0]+""+cor[1]); $("#hlong").val(cor[1]);
         });
     }
 }
@@ -67,6 +67,5 @@ function createMarker_map(markerOptions) {
 }
 
 function navigate(){
-    var coor = $("#hcoor").val();
-    window.open("geo:"+coor);
+    window.open("google.navigation:q=23.3728831,85.3372199&mode=d" , '_system'); 
 }
