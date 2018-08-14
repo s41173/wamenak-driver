@@ -5,11 +5,8 @@ var orderID = setInterval(function(){ cek_ongoing_order_active(); }, 10000);
 function cek_ongoing_order_active(){
     if (localStorage.sid != undefined){
         $.get(api+"sales/cek_booked_status/"+localStorage.sid, function(data, status){
-            if (data.status == true){
-                localStorage.removeItem("sid");
-                cek_order();
-                console.log('hapus sid');
-            }
+            localStorage.removeItem("sid");
+            cek_order();
         });
     }else{ cek_order(); }
 }
