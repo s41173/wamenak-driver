@@ -21,6 +21,7 @@ function get_ongoing_order(){
                     $("#orderpayment").html(datax.payment_type);
                 }else{
                     localStorage.removeItem("sid");
+                    navigator.vibrate(0);
                     setTimeout(function(){ window.location = "index.html"; }, 2000);
                 }
 
