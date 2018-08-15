@@ -8,14 +8,22 @@ function vibrator(){
 get_ongoing_order();
 vibrator();
 var vibrate = setInterval(function(){ vibrator(); }, 20000);
+var ongoing = setInterval(function(){ get_ongoing_order(); }, 10000);
 
 function get_ongoing_order(){
     if (localStorage.userid != undefined && localStorage.log != undefined){
         $.get(api+"sales/cek_ongoing", function(data, status){
-                var datax = data.content[0];
-                $("#ordercode").html(datax.code);
-                $("#orderaddress").html(datax.destination);
-                $("#orderpayment").html(datax.payment_type);
+
+                if (data.status == true){
+                    var datax = data.content[0];
+                    $("#ordercode").html(datax.code);
+                    $("#orderaddress").html(datax.destination);
+                    $("#orderpayment").html(datax.payment_type);
+                }else{
+                    localStorage.removeItem("sid");
+                    setTimeout(function(){ window.location = "index.html"; }, 2000);
+                }
+
         });
     }
 }

@@ -8,7 +8,7 @@ function cek_ongoing_order_active(){
             if (data.status == true){
                 cek_ongoing_active();
             }else{
-                // localStorage.removeItem("sid");
+                localStorage.removeItem("sid");
                 cek_order();
             }
         });
@@ -35,7 +35,7 @@ function cek_order(){
                 var bodyId = document.body.id;
                 console.log('buat sid');
                 if (bodyId != 'book'){ window.location = "book.html"; }
-            }
+            }else{ localStorage.removeItem("sid"); }
         });
     }
 }
