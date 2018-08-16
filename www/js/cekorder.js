@@ -2,9 +2,7 @@ var orderID = setInterval(function(){ cek_ongoing_order_active(); }, 10000);
 var bodyId = document.body.id;   
 if (bodyId == 'index'){
     cek_book_order();
-}else{
-    cek_ongoing_order_active();
-}
+}else{ cek_ongoing_order_active(); }
 
 function cek_book_order(){
 
