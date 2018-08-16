@@ -20,11 +20,11 @@ con = con+"<tr> <td>"+capitalizeFirstLetter(trans[i].product)+"</td> <td>x "+tra
                 $("#orderaddress").html(shipping.destination);
 
                 var cor = shipping.coordinate.split(',');
-                initialize_map(parseFloat(cor[0]),parseFloat(cor[1]));
-                // $("#bnavigate").href = "geo:"+cor[0]+","+cor[1];
+                setTimeout(function(){ initialize_map(parseFloat(cor[0]),parseFloat(cor[1])); 
                 a = document.getElementById("bnavigate");
-                // a.setAttribute("href", "geo:"+cor[0]+","+cor[1]);
                 $("#hcoor").val(cor[0]+","+cor[1]);
+                }, 3000);
+
         });
     }
 }

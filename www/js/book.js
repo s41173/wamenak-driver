@@ -35,6 +35,7 @@ function book(){
            if (data.status == true){
             // localStorage.removeItem("sid");
             toast(data.error);
+            navigator.vibrate(0);
             setTimeout(function(){ window.location = "order.html"; }, 2000);
            }
         });
